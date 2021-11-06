@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Pagina Web</h1>
+    </header>
+    <main>
+        <nav>
+            <a href="http://google.com">Google!</a>
+            <a href="http://educacionit.com">EducacionIT</a>
+        </nav>
+    </main>
+    <article id="movil">
+        <p>Esta navegando en un dispositivo móvil!</p>
+        <ul id="estatico"></ul>
+    </article>
+
+
+    <script> 
+        //1)Crear una lista desordenada con 10 elementos dentro usando un bucle for. Tener en cuenta que solo se le puede hacer un único appendChild al ul creado, asi minimizamos el tiempo de modificaciones en el DOM.
+        
+        let article = document.getElementById('movil');
+     
+        let lista = document.createElement('ul');
+
+        for (let i = 0; i < 10; i++) {
+            let li = document.createElement('li');
+            li.textContent = `Elemento ${i+1}`;
+            lista.appendChild(li);
+        }
+
+        article.appendChild(lista);
+
+
+        //2)Hacer que el <article> con id "movil" solamente se vea si la pagina se carga a menos de 500px.
+        
+    
+        if (window.outerWidth > 500) {
+            article.style.display = 'none';
+        } 
+        
+        
+
+
+        //3)Realizar la misma operacion que en el punto uno, pero ahora para el <ul> que ya se encuentra en el <body>. Recordar que no se puede hacer multiples appendChild a un nodo.
+
+        let estatico = document.getElementById('estatico');
+        for (i=0; i < 10; i++) {
+            let li = document.createElement('li');
+            li.textContent = `Elemento ${i+1}`;
+            estatico.appendChild(li);
+        }
+
+
+
+        //4)Intercambiar las URLs de los links de la barra de navegacion. El que dice Google! tiene que redirigir a educacionit.com y viceversa.
+
+        let link = document.getElementsByTagName('a');
+        link[0].href = 'http://educacionit.com';
+        link[1].href = 'http://google.com';
+
+        //5)Cambiarle el color del fondo al <header> por alguna tonalidad de azul oscuro y al <h1> por alguna tonalidad de blanco para que contraste.
+        //Bonus:
+
+        let header = document.getElementsByTagName('header');
+        let title = document.getElementsByTagName('h1');
+        
+        header[0].style.backgroundColor = 'steelblue';
+        title[0].style.color = 'darkblue';
+
+
+        //6)Realizar un efecto marquesina en un nodo <p> que diga "Mi primer programa en JS" que muestre de a una letra a la vez cada medio segundo por letra
+            
+        const frase = ['M', 'i', ' ', 'p', 'r', 'i', 'm', 'e', 'r', ' ', 'p', 'r', 'o', 'g', 'r', 'a', 'm', 'a', ' ', 'e', 'n', ' ', 'J', 'S'];    
+
+        let parrafo = document.createElement('p');
+
+        var i = 0;
+        function mostrarLetra() {
+            if (i < frase.length) {
+                parrafo.textContent += `${frase[i]}`;    
+                article.appendChild(parrafo);
+                i = i + 1;
+            } 
+        }
+
+        setInterval(mostrarLetra, 500); 
+
+        
+        //7)Crear un <div> de 200px de ancho por 200px de alto con el color de fondo a eleccion. El elemento tiene que poder ir y venir a lo largo de todo el ancho de la pantalla de manera continua.
+
+        let div = document.createElement('div');
+        div.style.position = 'relative';
+        div.style.height = '200px';
+        div.style.width = '200px';
+        div.style.backgroundColor = 'red';
+        div.style.borderRadius = '50%'
+        document.querySelector('main').appendChild(div);
+        let left = 0;
+        let avanzar = setInterval(()=>{
+            if (window.innerWidth === (left+200)) {
+                clearInterval(avanzar);
+            }
+        
+        div.style.left = left+'px'
+        
+        left++
+        }, 0.3);
+
+
+        //8)Al <div> del punto anterior transformarlo en circulo cada vez que se aproxime al centro de la pantalla y que vuelva a cuadrado cuando se aproxime a los extremos. 
+
+
+    </script>
+</body>
+</html>
