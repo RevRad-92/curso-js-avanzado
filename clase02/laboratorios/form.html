@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Evento Form</title>
+    <style>
+        input, textarea {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" class="form" autocomplete="off">
+
+        <label for="titulo">Titulo</label>
+        <input type="text" name="titulo" id="titulo" class="form" autocomplete="off">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje" class="form" autocomplete="off" cols="30" rows="10"></textarea>
+        <button>Enviar</button>
+    </form>
+
+    <ul>
+
+    </ul>
+
+    <script>
+
+        const form = document.querySelector('form');
+        
+        // console.log(form);
+
+        form.addEventListener('submit', (e) => {
+
+            // let inputs = document.querySelectorAll('input');
+            // let texts = document.querySelectorAll('textarea');
+            let elementos = document.querySelectorAll(".form");
+            const ul = document.querySelector('ul');
+
+            e.stopPropagation();
+            e.preventDefault();
+
+            // inputs.forEach((input) => {
+            //     let nodo = input.value;
+            //     // console.log(nodo); 
+            //     let li = document.createElement('li');
+            //     li.innerText = nodo;
+            //     ul.appendChild(li);
+            // })
+            
+            // texts.forEach((text) => {
+            //     let nodo = text.value;
+            //     // console.log(nodo);
+            //     let li = document.createElement('li');
+            //     li.innerText = nodo;
+            //     ul.appendChild(li);
+            // })
+
+            elementos.forEach((elemento) => {
+                let nodo = elemento.value;
+                // console.log(nodo);
+                let li = document.createElement('li');
+                li.innerText = nodo;
+                ul.appendChild(li);
+            })
+
+            
+            
+
+
+            
+
+
+        })
+
+    </script>
+</body>
+</html>
