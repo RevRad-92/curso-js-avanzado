@@ -70,6 +70,8 @@ setTimeout(() => {
 },15000); 
 
 
+
+
 /* COMUNICACION ASINCRÓNICA CON AJAX (HMLHttpRequest)   */
 /* AJAX: Asynchronous JavaScript And XML  (+JSON)       */
 
