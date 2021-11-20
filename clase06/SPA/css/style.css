@@ -1,0 +1,15 @@
+footer {
+    background-color: #000;
+    bottom: 0;
+    color: gold;
+    height: 75px;
+    line-height: 75px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}  /* ctrl + shif + p: sort lines as... */
+
+.alert {
+    height: 100vh;
+}
+
