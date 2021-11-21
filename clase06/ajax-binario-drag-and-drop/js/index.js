@@ -74,7 +74,7 @@ function cargarImagen(imagen) {
     })
 
 
-    xhr.send();
+    xhr.send(); 
     
 }
 
