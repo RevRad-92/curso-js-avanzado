@@ -101,14 +101,14 @@ drop.addEventListener('dragover', e => {
 
 
 /*---------------------------------------------------------------*/
-/* Peticion del recurso median Drag and Drop                     */
+/* Peticion del recurso mediante Drag and Drop                     */
 /*---------------------------------------------------------------*/
 
 drop.addEventListener('drop', e => {
     e.preventDefault(); // para que no abra la imagen en nueva pestaña
     // console.log("Solté el recurso");
     // console.log(e);
-    // console.log(e.dataTransfer.files[0].name); // fondo3.jpeg
+    console.log(e.dataTransfer.files[0].name); // fondo3.jpeg
     const imagen = e.dataTransfer.files[0].name;
 
 
