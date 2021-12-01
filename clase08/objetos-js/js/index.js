@@ -205,3 +205,5 @@ console.log(resultado); // 50 & funcion interna
 console.dir(resultado); // closure: x =50 z = 5 (DISPONIBLES)
 
 resultado(10); // y = 10
+
+// SIGUE EN CLASE 9
