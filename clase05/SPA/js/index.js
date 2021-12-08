@@ -48,7 +48,7 @@ function getPlantillaSinHistory() {
 
     /*Cargar paginas restantes */
     let links = document.querySelectorAll('a');
-
+    
     links.forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault();
